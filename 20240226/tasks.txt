@@ -1,0 +1,16 @@
+Task One:
+
+Create a webpage named research.html
+and show following data in it using <h1> to <h6> tags and <p> tag
+
+1- Future of Web Design and Development
+2- How many jobs are announced per year
+3- Salary package of FrontEnd, BackEnd and FullStack Developer (Monthly) in Pakistan
+4- Salary Package in other countries.
+5- Salary using Freelancing platforms. 
+
+Task Two:
+
+Write an HTML code that displays all 6 headings with each
+heading (<h1> <h2> ... <h6>) on new line having paragraphs <p> and the end
+of each paragraph; place a line (Horizontal Rule) <hr>.

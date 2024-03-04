@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&family=Sometype+Mono:ital,wght@0,400..700;1,400..700&display=swap"
+      rel="stylesheet"
+    />
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <style>
+      body {
+        font-family: "Sometype Mono", monospace;
+      }
+      .main {
+        display: flex;
+        border: 1px solid gray;
+        border-radius: 5px;
+        padding: 10px;
+        margin: 10px;
+        justify-content: space-around;
+        text-align: center;
+      }
+      .child {
+        width: 90%;
+        margin: 10px;
+        padding: 10px;
+        border-radius: 5px;
+        background-color: rgb(5, 124, 69);
+        text-align: center;
+        color: white;
+      }
+
+      .memberOne,
+      .memberTwo,
+      .memberThree,
+      .memberFour {
+        background-color: whitesmoke;
+      }
+      .child div {
+        background-color: orangered;
+        margin: 10px 0px;
+        padding: 10px 0;
+        transition: 1s;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="text-align: center">Team Members</h1>
+
+    <div class="main" style="font-size: 20px"></div>
+
+    <div class="main">
+      <div class="child memberOne" data-aos="flip-down"></div>
+      <div class="child memberTwo" data-aos="flip-left"></div>
+      <div class="child memberThree" data-aos="flip-right"></div>
+      <div class="child memberFour" data-aos="flip-up"></div>
+    </div>
+
+    <script>
+      let parentElement = document.querySelector(".main");
+
+      const members = [
+        "Zainab",
+        "Gotam",
+        "Sana",
+        "Isra",
+        "Natasha",
+        "Ashika",
+        "Afia",
+        "Kiran",
+        "Afshan",
+        "Alisha",
+        "Nosheen",
+        "Ishita",
+        "Aqib",
+        "Abdul Qadeer",
+        "Sunil",
+        "Susheel",
+        "Sahil",
+        "Jeewan",
+        "Awais",
+        "Moomal",
+      ];
+      let leaders = [];
+      let assignedMembers = [];
+      let leaderCount = 1;
+      let memberCount = 1;
+
+      membersOfEachLeader = Math.round(members.length / 4);
+
+      let delay = 100;
+      while (members.length != assignedMembers.length + leaders.length) {
+        randomIdx = Math.floor(Math.random() * members.length);
+
+        if (leaders.length < 4) {
+          if (!leaders.includes(members[randomIdx])) {
+            leaders.push(members[randomIdx]);
+
+            leaderElement = document.createElement("div");
+            leaderElement.innerText = members[randomIdx];
+
+            leaderElement.setAttribute("data-aos-delay", `${delay}`);
+            leaderElement.setAttribute("data-aos", "flip-down");
+            leaderElement.classList.add("child");
+            leaderElement.classList.add(`leader${leaderCount}`);
+            parentElement.append(leaderElement);
+          }
+          leaderCount++;
+          delay = delay + 100;
+        }
+
+        if (
+          !leaders.includes(members[randomIdx]) &&
+          !assignedMembers.includes(members[randomIdx])
+        ) {
+          assignedMembers.push(members[randomIdx]);
+          member = document.createElement("div");
+          member.innerText = members[randomIdx];
+          member.setAttribute("data-aos-delay", `${delay}`);
+          member.setAttribute("data-aos", "flip-right");
+
+          if (memberCount <= 4) {
+            document.querySelector(".memberOne").append(member);
+          } else if (memberCount <= 8) {
+            document.querySelector(".memberTwo").append(member);
+          } else if (memberCount <= 12) {
+            document.querySelector(".memberThree").append(member);
+          } else if (memberCount <= 16) {
+            document.querySelector(".memberFour").append(member);
+          }
+          memberCount++;
+          delay = delay + 100;
+        }
+        // console.log("leaders", leaders);
+        // console.log("members", assignedMembers);
+      }
+    </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+      AOS.init();
+    </script>
+  </body>
+</html>

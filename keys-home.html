@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Keyboard Game</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+
+      .keyboard {
+        display: grid;
+        grid-template-columns: repeat(10, 50px);
+        gap: 5px;
+      }
+
+      .key {
+        width: 50px;
+        height: 50px;
+        border: 1px solid black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        font-size: 18px;
+      }
+
+      .highlighted {
+        background-color: gray;
+      }
+
+      .correct {
+        background-color: green;
+      }
+
+      .incorrect {
+        background-color: red;
+      }
+
+      #practice-count {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        font-size: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="practice-count">Practice Count: 0</div>
+    <div class="keyboard" id="keyboard">
+      <div class="key" data-key="65">A</div>
+      <div class="key" data-key="83">S</div>
+      <div class="key" data-key="68">D</div>
+      <div class="key" data-key="70">F</div>
+      <div class="key" data-key="71">G</div>
+      <div class="key" data-key="72">H</div>
+      <div class="key" data-key="74">J</div>
+      <div class="key" data-key="75">K</div>
+      <div class="key" data-key="76">L</div>
+      <div class="key" data-key="186">;</div>
+    </div>
+
+    <script>
+      const keys = document.querySelectorAll(".key");
+      let currentKeyIndex = 0;
+      let practiceCount = 0;
+
+      function highlightKey() {
+        keys[currentKeyIndex].classList.add("highlighted");
+      }
+
+      function resetKeys() {
+        keys.forEach((key) => {
+          key.classList.remove("highlighted", "correct", "incorrect");
+        });
+      }
+
+      function handleKeyPress(event) {
+        const pressedKey = event.keyCode;
+        const highlightedKey = parseInt(keys[currentKeyIndex].dataset.key);
+
+        if (pressedKey === highlightedKey) {
+          keys[currentKeyIndex].classList.add("correct");
+          currentKeyIndex++;
+          if (currentKeyIndex < keys.length) {
+            resetKeys();
+            highlightKey();
+          } else {
+            practiceCount++;
+            document.getElementById(
+              "practice-count"
+            ).innerText = `Practice Count: ${practiceCount}`;
+            currentKeyIndex = 0;
+            resetKeys();
+            highlightKey();
+          }
+        } else {
+          keys.forEach((key) => {
+            if (parseInt(key.dataset.key) === pressedKey) {
+              key.classList.add("incorrect");
+            }
+          });
+        }
+      }
+
+      document.addEventListener("keydown", handleKeyPress);
+
+      highlightKey();
+    </script>
+  </body>
+</html>

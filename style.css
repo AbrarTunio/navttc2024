@@ -1,0 +1,44 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.keyboard {
+  display: grid;
+  grid-template-columns: repeat(10, 50px);
+  gap: 5px;
+}
+
+.key {
+  width: 50px;
+  height: 50px;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.highlighted {
+  background-color: gray;
+}
+
+.correct {
+  background-color: green;
+}
+
+.incorrect {
+  background-color: red;
+}
+
+#practice-count {
+  position: absolute;
+  top: 20px;
+  left: calc(50% - 80px);
+  font-size: 16px;
+}

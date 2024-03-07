@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      table,
+      td {
+        border: 2px solid;
+      }
+      td:nth-child(1) {
+        text-align: right;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="">
+      <table>
+        <tr>
+          <td colspan="2" style="text-align: center; background-color: aqua">
+            INFORMATION TABLE
+          </td>
+        </tr>
+        <tr>
+          <td>Name</td>
+          <td>
+            <input type="text" /> <br />
+            <label for="">Enter Your Full Name</label>
+          </td>
+        </tr>
+
+        <tr>
+          <td><label for="email"> Email</label></td>
+          <td>
+            <input type="email" id="email" /> <br />
+            <label for="">Enter Contact Address</label>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Password</td>
+          <td>
+            <input type="number" /> <br />
+            <label for="">Code to Identify You</label>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Address</td>
+          <td>
+            <input type="text" /> <br />
+            <label for="">Complete Address</label>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Country</td>
+          <td>
+            <select name="" id="">
+              <option value="" selected>Pakistan</option>
+              <option value="">China</option>
+              <option value="">Iran</option>
+              <option value="">Turkey</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>Gender</td>
+          <td>
+            <input type="radio" name="gender" value="male" id="m" />
+            <label for="m">Male</label>
+            <input type="radio" name="gender" value="female" id="f" />
+            <label for="f">Female</label>
+          </td>
+        </tr>
+        <tr>
+          <td>Hobbies</td>
+          <td>
+            <input type="checkbox" id="e" /> <label for="e">Eating</label>
+            <br />
+            <input type="checkbox" id="s" /> <label for="s">Sleeping</label>
+            <br />
+            <input type="checkbox" id="d" /> <label for="d">Dancing</label>
+            <br />
+            <input type="checkbox" id="y" /> <label for="y">Yawning</label>
+          </td>
+        </tr>
+        <tr>
+          <td>Your Website</td>
+          <td>
+            <input type="url" placeholder="https://" name="" id="" />
+            <br />
+            <label for="">Enter you Website</label>
+          </td>
+        </tr>
+        <tr>
+          <td>Information About You</td>
+          <td>
+            <textarea name="" id="" cols="30" rows="10"></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td><input type="submit" value="Send your report" /></td>
+          <td><input type="reset" value="Erase your report" /></td>
+        </tr>
+      </table>
+    </form>
+  </body>
+</html>

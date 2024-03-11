@@ -1,0 +1,14 @@
+.ab {
+  color: greenyellow;
+  border: 2px solid;
+  text-align: center;
+}
+
+.cd {
+  color: maroon;
+  border: 5px dotted;
+}
+
+.ef {
+  background-color: blueviolet;
+}

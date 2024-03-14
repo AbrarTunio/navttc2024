@@ -1,0 +1,19 @@
+.container {
+  display: flex;
+  height: 600px;
+  border: 1px solid navy;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.child {
+  border: 2px solid;
+  height: 70%;
+  width: 400px;
+  background-image: url("https://picsum.photos/600");
+  margin-top: 10px;
+}
+
+.left {
+  width: 800px;
+}

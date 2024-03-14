@@ -1,0 +1,19 @@
+ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+}
+
+li {
+  border: 1px solid;
+  width: 100px;
+  text-align: center;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: rgb(13, 228, 146);
+}
+
+li:hover {
+  background-color: rgb(5, 152, 96);
+  color: white;
+}

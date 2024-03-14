@@ -1,0 +1,35 @@
+body {
+  background-image: url("https://picsum.photos/1100/800");
+}
+
+.container {
+  height: 200px;
+  width: 200px;
+  margin: auto;
+  margin-top: 100px;
+  border-radius: 5px;
+  background-color: rgba(128, 255, 0, 0.35);
+  padding-top: 10px;
+}
+
+h3 {
+  text-align: center;
+}
+
+form {
+  text-align: center;
+}
+
+.child {
+  margin: 5px;
+}
+
+input {
+  border-radius: 10px 3px;
+  padding: 10px;
+  color: rgba(128, 255, 0);
+}
+
+#submit {
+  background-color: rgb(7, 141, 159);
+}
